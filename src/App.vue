@@ -15,23 +15,17 @@ import HelloWorld from './components/HelloWorld.vue'
   </div>
   <HelloWorld msg="Vite + Vue" /> -->
   <div class="navbar bg-base-100">
-    <router-link to="/" class="btn btn-ghost normal-case text-xl">UESR LIST --- Sample Page --- Vite + Vue + Vue Router</router-link>
+    <router-link to="/" class="btn btn-ghost normal-case text-xl">UESR LIST --- Sample Page --- Vite + Vue + Vue Router
+    </router-link>
   </div>
-  <router-view />
+  <div class="content">
+    <router-view />
+  </div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.content {
+  width: 50vw;
+  margin: 0 auto;
 }
 </style>
