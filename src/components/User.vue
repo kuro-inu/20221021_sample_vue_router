@@ -45,28 +45,38 @@ axios
             <ul>
                 <li>
                     <router-link to="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            class="w-4 h-4 mr-2 stroke-current">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-home w-4 h-4 mr-2 stroke-current" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
                         </svg>
                         User list
                     </router-link>
                 </li>
                 <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        class="w-4 h-4 mr-2 stroke-current">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-friends w-4 h-4 mr-2 stroke-current" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="7" cy="5" r="2"></circle>
+                        <path d="M5 22v-5l-1 -1v-4a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4l-1 1v5"></path>
+                        <circle cx="17" cy="5" r="2"></circle>
+                        <path d="M15 22v-4h-2l2 -6a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1l2 6h-2v4"></path>
                     </svg>
                     {{ userData.name }}
                 </li>
             </ul>
         </div>
 
-        <div class="overflow-x-auto">
-            <table class="table w-full">
-                <!-- <thead>
+        <div class="content">
+            <div class="overflow-x-auto">
+                <table class="table w-full">
+                    <!-- <thead>
                 <tr>
                     <th></th>
                     <th>Name</th>
@@ -74,36 +84,49 @@ axios
                     <th>Favorite Color</th>
                 </tr>
             </thead> -->
-                <tbody>
-                    <tr class="hover">
-                        <th>Id</th>
-                        <td>{{ userData.id}}</td>
-                    </tr>
-                    <tr class="hover">
-                        <th>名前</th>
-                        <td>{{ userData.name}}</td>
-                    </tr>
-                    <tr class="hover">
-                        <th>E-Mail</th>
-                        <td>{{ userData.email}}</td>
-                    </tr>
-                    <tr class="hover">
-                        <th>電話番号</th>
-                        <td>{{ userData.phone}}</td>
-                    </tr>
-                    <tr class="hover">
-                        <th>ホームページ</th>
-                        <td>{{ userData.website}}</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <tbody>
+                        <tr class="hover">
+                            <th>Id</th>
+                            <td>{{ userData.id }}</td>
+                        </tr>
+                        <tr class="hover">
+                            <th>名前</th>
+                            <td>{{ userData.name }}</td>
+                        </tr>
+                        <tr class="hover">
+                            <th>E-Mail</th>
+                            <td>{{ userData.email }}</td>
+                        </tr>
+                        <tr class="hover">
+                            <th>電話番号</th>
+                            <td>{{ userData.phone }}</td>
+                        </tr>
+                        <tr class="hover">
+                            <th>ホームページ</th>
+                            <td>{{ userData.website }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
     </div>
 
     <div class="flex justify-center my-4 space-x-4">
         <router-link to="/" class="btn">戻る</router-link>
-        <router-link to="/" class="btn">更新</router-link>
+        <!-- The button to open modal -->
+        <label for="my-modal-3" class="btn modal-button">更新</label>
+    </div>
+
+    <!-- Put this part before </body> tag -->
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box relative">
+            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="text-lg font-bold">('A`;)!!</h3>
+            <p class="py-4">
+                更新画面は実装していないんです…。
+            </p>
+        </div>
     </div>
 </template>
 
@@ -123,10 +146,21 @@ axios
 }
 
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+    {
+    opacity: 0;
+}
+
+.content {
+    width: 95%;
+    margin: 0 auto;
 }
 </style>
